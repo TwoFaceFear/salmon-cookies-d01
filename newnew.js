@@ -28,47 +28,46 @@ Branch.prototype.rng = function(){
 
 //i need to create a table on the page using the hours of operation, the specific branch and the totals created above
 
-Branch.prototype.getTable = function(){
-  var table = document.createElement('table');
+// Branch.prototype.addInfo = function(){
+//   var information = [];
+//   var panel;
+//   for(var i = 0; i < branchHours.length; i++){
+//     item = new hourlys
+//   }
+// };
+
+function getTable() {
   var titleRow = document.createElement('tr');
-  titleRow.textContent = this.branchTitle;
   table.appendChild(titleRow);
-  var itemRow, itemName, itemPrice;
+
+  var cell = document.createElement('td');
+  titleRow.appendChild(cell);
 
   for(var i = 0; i < this.hourlyResults.length; i++){
-    itemRow = document.createElement('tr');
-    itemName = document.createElement('td');
-    itemName.textContent = this.hourlyResults[i].name;
-    itemPrice = document.createElement('td');
-    itemPrice.textContent = this.hourlyResults[i].price;
-    itemRow.appendChild(itemName);
-    itemRow.appendChild(itemPrice);
-    table.appendChild(itemRow);
+    var itemName = document.createElement('td');
+    itemName.textContent(branchHours[i]);
+    titleRow.appendChild(itemName);
   }
-  return table;
-};
 
+var table = document.getElementById('table');
+
+getTable();
 var pike = new Branch('1st and Pike', 23, 65,6.3);
 pike.rng;
-pike.getTable;
 console.log('pike',pike);
 
 var seaTac = new Branch('SeaTac', 3, 24, 1.2);
 seaTac.rng;
-seaTac.getTable;
 console.log('seaTac',seaTac);
 
 var seaCenter = new Branch('Seattle Center', 11, 38, 3.7);
 seaCenter.rng;
-seaCenter.getTable;
 console.log('seaCenter',seaCenter);
 
 var capHill = new Branch('Capital Hill', 20, 38, 2.3);
 capHill.rng;
-capHill.getTable;
 console.log('capHill',capHill);
 
 var alki = new Branch('Alki', 2, 16, 4.6);
 alki.rng;
-alki.getTable;
 console.log('alki',alki);
