@@ -10,6 +10,27 @@ html, body {
 }
 
 table, table * {
-  border: 1px solid black;
-  margin: auto;
+  border: 2px solid #9BF0E1;
+  padding: 1px;
+  width: auto;
+}
+
+table {
+  background-color: #222326;
+}
+
+table tr {
+  background-color: #9BF0E1;
+}
+
+table td {
+  font-weight: bold;
+}
+
+#wrapper {
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: Verdana;
 }
