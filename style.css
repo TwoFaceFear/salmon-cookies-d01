@@ -10,7 +10,8 @@ html, body {
 }
 
 table, table * {
-  border: 2px solid #9BF0E1;
+  border: 2px solid #FDFDFD;
+  border-radius: 3px;
   padding: 1px;
   width: auto;
 }
@@ -20,7 +21,7 @@ table {
 }
 
 table tr {
-  background-color: #9BF0E1;
+  background-color: #FDFDFD;
 }
 
 table td {
@@ -32,5 +33,5 @@ table td {
 }
 
 h1 {
-  font-family: Verdana;
+
 }
