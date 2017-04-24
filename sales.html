@@ -1,30 +1,26 @@
 <!DOCTYPE html>
   <html>
-  <head>
-    <title>sales</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <form id="store-create">
-      <label id="branch-name"> Name </label>
-      <input type="text" name="store-name" />
+    <head>
+      <title> sales </title>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <h1> Buisness Results </h1>
+      <form id="store-create">
+        <label for="branchName"> Name </label>
+        <input type="text" name="branchName" />
 
-      <label id="minimum-customers"> Minimum customers per hour </label>
-      <input type="number" name="store-name" />
+        <label for="minCust"> Minimum customers per hour </label>
+        <input type="number" name="minCust" />
 
-      <label id="maximum-customers"> Maximum customers per hour </label>
-      <input type="number" name="store-name" />
+        <label for="maxCust"> Maximum customers per hour </label>
+        <input type="number" name="maxCust" />
 
-      <label id="average-cookies"> Average cookies per customer </label>
-      <input type="number" name="store-name" />
+        <label for="avgCookies"> Average cookies per customer </label>
+        <input type="number" name="avgCookies" />
 
-      <input type"submit" value="submit" />
-    </form>
-      <h1>Buisness Results</h1>
-      <div id="wrapper">
-
-      <table id="table"></table>
-    </div>
-    <script type="text/javascript" src="newnew.js"></script>
-  </body>
+        <input type="submit" value="submit">
+      </form>
+      <script type="text/javascript" src="sales.js"></script>
+    </body>
   </html>

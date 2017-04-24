@@ -30,6 +30,7 @@ Branch.prototype.rng = function(){
 
 Branch.prototype.addInfo = function(){
   var timeRow = document.createElement('tr');
+  table.setAttribute('id', 'table');
   table.appendChild(timeRow);
 
   var cell = document.createElement('td');
@@ -46,29 +47,28 @@ Branch.prototype.addInfo = function(){
     timeRow.appendChild(itemName);
   }
   timeRow.appendChild(totalCell);
+
+  function getTable() {
+    var titleRow = document.createElement('tr');
+    table.appendChild(titleRow);
+
+    var cell = document.createElement('td');
+    titleRow.appendChild(cell);
+
+    for(var i = 0; i < branchHours.length; i++){
+      var itemName = document.createElement('td');
+      itemName.textContent = branchHours[i];
+      titleRow.appendChild(itemName);
+    }
+    var cellTitle = document.createElement('td');
+    cellTitle.textContent = 'Total';
+    titleRow.appendChild(cellTitle);
+  }
+
+  var table = document.getElementById('table');
 };
 
-function getTable() {
-  var titleRow = document.createElement('tr');
-  table.appendChild(titleRow);
-
-  var cell = document.createElement('td');
-  titleRow.appendChild(cell);
-
-  for(var i = 0; i < branchHours.length; i++){
-    var itemName = document.createElement('td');
-    itemName.textContent = branchHours[i];
-    titleRow.appendChild(itemName);
-  }
-  var cellTitle = document.createElement('td');
-  cellTitle.textContent = 'Total';
-  titleRow.appendChild(cellTitle);
-}
-
-var table = document.getElementById('table');
-
 function main() {
-  getTable();
   var pike = new Branch('1st and Pike', 23, 65,6.3);
   pike.rng;
   pike.addInfo();
@@ -95,21 +95,21 @@ function main() {
   console.log('alki',alki);
 }
 
-function storeCreate(event) {
-  event.preventDefault();
-
-  var form = event.target;
-
-  var branchTitle = form.branchTitle.value;
-  var minCust = parseInt(form.minCust.value);
-  var maxCust = parseInt(form.maxCust.value);
-  var avgCookies = parseInt(form.avgCookies.value);
-
-  var branch = new Branch(branchTitle, minCust, maxCust, avgCookies);
-  document.getElementById('table').appendChild(branch.addInfo());
-
-  form.reset();
-}
-document.getElementById('store-create').addEventListner('submit', storeCreate);
+// function storeCreate(event) {
+//   event.preventDefault();
+//
+//   var form = event.target;
+//
+//   var branchTitle = form.branchTitle.value;
+//   var minCust = parseInt(form.minCust.value);
+//   var maxCust = parseInt(form.maxCust.value);
+//   var avgCookies = parseInt(form.avgCookies.value);
+//
+//   var branch = new Branch(branchTitle, minCust, maxCust, avgCookies);
+//   document.getElementById('table').appendChild(branch.addInfo());
+//
+//   form.reset();
+// }
+// document.getElementById('store-create').addEventListner('submit', storeCreate);
 
 main();
